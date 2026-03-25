@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Azan Arcade | Pong</title>
+  <meta name="description" content="Play premium browser Pong against a responsive AI bot in Azan Arcade.">
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body class="page-shell">
+  <div class="background-glow background-glow--left" aria-hidden="true"></div>
+  <div class="background-glow background-glow--right" aria-hidden="true"></div>
+  <div class="grid-noise" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">Azan Arcade</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../../index.html#games">Games</a>
+        <a href="../../index.html#platform">Platform</a>
+        <a href="../../index.html">Main Site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="game-page">
+    <div class="container game-layout">
+      <div class="game-layout__header">
+        <div>
+          <p class="eyebrow">Arcade Title</p>
+          <h1>Pong</h1>
+          <p>Classic one on one arcade action against a responsive bot with score tracking and selectable difficulty.</p>
+        </div>
+        <a class="button button--secondary" href="../../index.html#games">Back To Games</a>
+      </div>
+
+      <section class="glass-card game-shell">
+        <div class="game-meta">
+          <div class="game-summary">
+            <div class="game-stat"><span>Player</span><strong id="player-score">0</strong></div>
+            <div class="game-stat"><span>Bot</span><strong id="ai-score">0</strong></div>
+            <div class="game-stat"><span>Status</span><strong id="pong-status">Ready</strong></div>
+          </div>
+          <p class="game-meta__instructions">Move with W/S or Arrow keys. First to 5 wins.</p>
+        </div>
+
+        <div class="game-controls">
+          <button class="control-button" id="pong-start" type="button">Start</button>
+          <button class="control-button" id="pong-pause" type="button">Pause</button>
+          <button class="control-button" id="pong-restart" type="button">Restart</button>
+          <button class="difficulty-chip is-active" data-difficulty="easy" type="button">Easy</button>
+          <button class="difficulty-chip" data-difficulty="medium" type="button">Medium</button>
+          <button class="difficulty-chip" data-difficulty="hard" type="button">Hard</button>
+        </div>
+
+        <div class="game-stage">
+          <div class="game-canvas-wrap">
+            <canvas class="game-canvas" id="pong-canvas" width="960" height="540" aria-label="Pong game area"></canvas>
+          </div>
+          <div class="game-overlay" id="pong-overlay">
+            <div class="glass-card game-panel">
+              <h2 class="game-panel__title" id="pong-overlay-title">Pong</h2>
+              <p class="game-panel__text" id="pong-overlay-text">Choose a difficulty and start the match.</p>
+              <button class="button button--primary" id="pong-overlay-action" type="button">Start Match</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="game-mobile-controls">
+          <button class="control-button" data-move="up" type="button">Up</button>
+          <button class="control-button" data-move="down" type="button">Down</button>
+          <button class="control-button" data-action="start" type="button">Start</button>
+          <button class="control-button" data-action="pause" type="button">Pause</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="../../js/main.js"></script>
+  <script src="ai.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Azan Arcade | Tetris</title>
+  <meta name="description" content="Play premium browser Tetris with scoring, line clearing, and next piece preview in Azan Arcade.">
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body class="page-shell">
+  <div class="background-glow background-glow--left" aria-hidden="true"></div>
+  <div class="background-glow background-glow--right" aria-hidden="true"></div>
+  <div class="grid-noise" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">Azan Arcade</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../../index.html#games">Games</a>
+        <a href="../../index.html#platform">Platform</a>
+        <a href="../../index.html">Main Site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="game-page">
+    <div class="container game-layout">
+      <div class="game-layout__header">
+        <div>
+          <p class="eyebrow">Arcade Title</p>
+          <h1>Tetris</h1>
+          <p>Falling blocks, live score flow, next piece preview, and sharp responsive controls in a timeless format.</p>
+        </div>
+        <a class="button button--secondary" href="../../index.html#games">Back To Games</a>
+      </div>
+
+      <section class="glass-card game-shell">
+        <div class="game-meta">
+          <div class="game-summary">
+            <div class="game-stat"><span>Score</span><strong id="tetris-score">0</strong></div>
+            <div class="game-stat"><span>Lines</span><strong id="tetris-lines">0</strong></div>
+            <div class="game-stat"><span>Status</span><strong id="tetris-status">Ready</strong></div>
+          </div>
+          <p class="game-meta__instructions">Move with Arrow keys or A/D. Rotate with W or Up. Space performs a hard drop.</p>
+        </div>
+
+        <div class="game-controls">
+          <button class="control-button" id="tetris-start" type="button">Start</button>
+          <button class="control-button" id="tetris-pause" type="button">Pause</button>
+          <button class="control-button" id="tetris-restart" type="button">Restart</button>
+        </div>
+
+        <div class="game-stage">
+          <div class="tetris-layout">
+            <canvas class="game-canvas" id="tetris-canvas" width="360" height="720" aria-label="Tetris game area"></canvas>
+            <div class="preview-panel">
+              <div class="preview-card">
+                <span>Next Piece</span>
+                <strong>Preview</strong>
+              </div>
+              <canvas class="preview-canvas" id="tetris-preview" width="160" height="160" aria-label="Next Tetris piece preview"></canvas>
+            </div>
+          </div>
+          <div class="game-overlay" id="tetris-overlay">
+            <div class="glass-card game-panel">
+              <h2 class="game-panel__title" id="tetris-overlay-title">Tetris</h2>
+              <p class="game-panel__text" id="tetris-overlay-text">Build clean lines, manage the stack, and keep the board open.</p>
+              <button class="button button--primary" id="tetris-overlay-action" type="button">Start Stack</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="game-mobile-controls">
+          <button class="control-button" data-action="left" type="button">Left</button>
+          <button class="control-button" data-action="rotate" type="button">Rotate</button>
+          <button class="control-button" data-action="right" type="button">Right</button>
+          <button class="control-button" data-action="drop" type="button">Drop</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="../../js/main.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Azan Arcade | Snake</title>
+  <meta name="description" content="Play premium browser Snake with rising speed and clean responsive controls in Azan Arcade.">
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body class="page-shell">
+  <div class="background-glow background-glow--left" aria-hidden="true"></div>
+  <div class="background-glow background-glow--right" aria-hidden="true"></div>
+  <div class="grid-noise" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../../index.html">Azan Arcade</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../../index.html#games">Games</a>
+        <a href="../../index.html#platform">Platform</a>
+        <a href="../../index.html">Main Site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="game-page">
+    <div class="container game-layout">
+      <div class="game-layout__header">
+        <div>
+          <p class="eyebrow">Arcade Title</p>
+          <h1>Snake</h1>
+          <p>Precision movement, rising speed, and a clean survival loop built around focus and control.</p>
+        </div>
+        <a class="button button--secondary" href="../../index.html#games">Back To Games</a>
+      </div>
+
+      <section class="glass-card game-shell">
+        <div class="game-meta">
+          <div class="game-summary">
+            <div class="game-stat"><span>Score</span><strong id="snake-score">0</strong></div>
+            <div class="game-stat"><span>Speed</span><strong id="snake-speed">1x</strong></div>
+            <div class="game-stat"><span>Status</span><strong id="snake-status">Ready</strong></div>
+          </div>
+          <p class="game-meta__instructions">Move with Arrow keys or W A S D. Press space to pause.</p>
+        </div>
+
+        <div class="game-controls">
+          <button class="control-button" id="snake-start" type="button">Start</button>
+          <button class="control-button" id="snake-pause" type="button">Pause</button>
+          <button class="control-button" id="snake-restart" type="button">Restart</button>
+        </div>
+
+        <div class="game-stage">
+          <div class="game-canvas-wrap">
+            <canvas class="game-canvas" id="snake-canvas" width="600" height="600" aria-label="Snake game area"></canvas>
+          </div>
+          <div class="game-overlay" id="snake-overlay">
+            <div class="glass-card game-panel">
+              <h2 class="game-panel__title" id="snake-overlay-title">Snake</h2>
+              <p class="game-panel__text" id="snake-overlay-text">Start the run and keep control as the speed rises.</p>
+              <button class="button button--primary" id="snake-overlay-action" type="button">Start Run</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="game-mobile-controls game-mobile-controls--snake">
+          <span class="control-spacer"></span>
+          <button class="control-button" data-direction="up" type="button">Up</button>
+          <span class="control-spacer"></span>
+          <button class="control-button" data-direction="left" type="button">Left</button>
+          <button class="control-button" data-direction="down" type="button">Down</button>
+          <button class="control-button" data-direction="right" type="button">Right</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="../../js/main.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
